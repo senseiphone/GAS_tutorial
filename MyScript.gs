@@ -1,3 +1,12 @@
+function showMenu() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var menu = [
+    {name: "初期化", functionName: "initSheet"},
+    {name: "判定", functionName: "getResults"},
+  ];
+  ss.addMenu("処理メニュー", menu);
+}
+
 function initSheet() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var names = ["sensei", "phone", "droid"];
