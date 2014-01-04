@@ -1,9 +1,9 @@
-function hello() {
-  // alert("Hello world");
-  // Logger.log("Hello World!");
-  Browser.msgBox("Hello World!");
-}
+// 対象を選択して、処理をする
 
-function getDouble(n) {
-  return n * 2;
+function setData() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getActiveSheet();
+  var range = sheet.getRange("A1");
+  
+  range.setValue(100);
 }
