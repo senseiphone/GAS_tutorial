@@ -1,4 +1,8 @@
-function showMenu() {
+function onEdit(e) {
+  e.range.setComment("Edited by: " + e.user);
+}
+
+function onOpen() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var menu = [
     {name: "初期化", functionName: "initSheet"},
