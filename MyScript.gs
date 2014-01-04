@@ -1,10 +1,10 @@
-// 対象を選択して、処理をする
-
-function setData() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getActiveSheet();
-  var range = sheet.getRange(1, 2);
+function initSheet() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var names = ["sensei", "phone", "droid"];
   
-  range.setValue(100);
-  range.setBackground("#ff0000");
+  sheet.clear(); // シートの初期化
+  for (var i = 1; i <= 20; i++) {
+    sheet.getRange(i, 1).setValue(names[Math.floor(Math.random() * names.length)]);
+    sheet.getRange(i, 2).setValue(Math.floor(Math.random() * 101));
+  }
 }
