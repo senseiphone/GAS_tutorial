@@ -1,3 +1,16 @@
+// form用のメソッド - トリガーをフォーム送信時にする
+function sendReport(e) {
+  var rs = '';
+  
+  var name = e.namedValue['お名前'];
+  var email = e.namedValue['メールアドレス'];
+  var attend = e.namedValues['参加？'];
+  
+  rs = "name: " + name + "\nemail: " + email + "\nattend: " + attend;
+  
+  MailApp.sendEmail("someone@gmail.com", "回答がありました", rs); // メールアドレスを入力
+}
+
 function sendReport() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var n = 0;
